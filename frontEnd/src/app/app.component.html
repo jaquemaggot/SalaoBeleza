@@ -1,0 +1,49 @@
+<div class="mdl-layout mdl-js-layout mdl-layout--fixed-header">
+    <header class="mdl-layout__header">
+        <div class="mdl-layout__header-row">
+            <!-- Title -->
+            <span class="mdl-layout-title">O Estudio</span>
+            <!-- Add spacer, to align navigation to the right -->
+            <div class="mdl-layout-spacer"></div>
+            <!-- Navigation. We hide it in small screens. -->
+            <nav class="mdl-navigation mdl-layout--large-screen-only">
+                <span>Leonardo</span>
+                <button id="demo-menu-lower-right"
+                class="mdl-button mdl-js-button mdl-button--icon">
+                <i class="material-icons">arrow_drop_down</i>
+            </button>
+            <ul class="mdl-menu mdl-menu--bottom-right mdl-js-menu mdl-js-ripple-effect"
+            for="demo-menu-lower-right">
+            <li class="mdl-menu__item">Config</li>
+            <li class="mdl-menu__item">Logout</li>
+        </ul>
+    </nav>
+</div>
+</header>
+<div class="android-drawer mdl-layout__drawer">
+
+<span class="mdl-layout-title">
+    <p></p>
+    <p></p>
+    <img src="../../ext/img/user.png" class="demo-avatar">
+</span>
+<nav class="mdl-navigation">
+    <span class="mdl-navigation__link" href="">Maquiagem</span>
+    <a class="mdl-navigation__link" href="">Agenda do Dia</a>
+    <a class="mdl-navigation__link" href="">Novo Agendamento</a>
+    <a class="mdl-navigation__link" href="">Novo Servico</a>
+    <div class="android-drawer-separator"></div>
+    <span class="mdl-navigation__link" href="">Cortes de Cabelo</span>
+    <a class="mdl-navigation__link" href="">Agenda do Dia</a>
+    <a class="mdl-navigation__link" href="">Novo Agendamento</a>
+    <a class="mdl-navigation__link" href="">Novo Servico</a>
+    <div class="android-drawer-separator"></div>
+    <span class="mdl-navigation__link" href="">Clientes</span>
+    <a class="mdl-navigation__link" href="">Novo Cliente</a>
+    <a class="mdl-navigation__link" href="">Lista de Clientes</a>
+</nav>
+</div>
+
+    <router-outlet></router-outlet>
+
+</div>
