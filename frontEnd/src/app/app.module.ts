@@ -2,26 +2,31 @@ import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 import { Router, RouterModule, Routes } from '@angular/router';
 import { HttpClientModule } from '@angular/common/http';
-import { FormsModule } from '@angular/forms';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
-import {MatButtonModule, MatCheckboxModule} from '@angular/material';
+import {MatButtonModule, MatCheckboxModule, MatInputModule } from '@angular/material';
 import {MatMenuModule} from '@angular/material/menu';
 import {MatToolbarModule} from '@angular/material/toolbar';
+import {MatTableModule} from '@angular/material/table';
+import { MatFormFieldModule} from '@angular/material/form-field';
 
 // import component
 import { AppComponent } from './app.component';
 import { TesteComponent } from './teste/teste.component';
+import { AgMaquiagemComponent } from './ag-maquiagem/ag-maquiagem.component';
 
 //Rotas
 const appRoutes: Routes = [
   { path: '', redirectTo: "/home", pathMatch: "full" },
-  { path: 'home', component: TesteComponent }
+  { path: 'home', component: TesteComponent },
+  { path: 'agendamaquiagem', component: AgMaquiagemComponent }
 ];
 
 @NgModule({
   declarations: [
     AppComponent,
-    TesteComponent
+    TesteComponent,
+    AgMaquiagemComponent
   ],
   imports: [
     BrowserModule,
@@ -34,7 +39,11 @@ const appRoutes: Routes = [
     MatButtonModule, 
     MatCheckboxModule,
     MatMenuModule,
-    MatToolbarModule
+    MatToolbarModule,
+    MatTableModule,
+    ReactiveFormsModule,
+    MatFormFieldModule,
+    MatInputModule
   ],
   providers: [],
   bootstrap: [AppComponent],

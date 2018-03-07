@@ -25,11 +25,14 @@
 <span class="mdl-layout-title">
     <p></p>
     <p></p>
-    <img src="../../ext/img/user.png" class="demo-avatar">
+    <button  routerLink="/home" class="mdl-button mdl-js-button mdl-button--fab mdl-js-ripple-effect mdl-button--colored">
+        <i class="material-icons">home</i>
+    </button>
+    <!-- <img src="../../ext/img/user.png" > -->
 </span>
 <nav class="mdl-navigation">
     <span class="mdl-navigation__link" href="">Maquiagem</span>
-    <a class="mdl-navigation__link" href="">Agenda do Dia</a>
+    <a class="mdl-navigation__link" routerLink="/agendamaquiagem">Agenda do Dia</a>
     <a class="mdl-navigation__link" href="">Novo Agendamento</a>
     <a class="mdl-navigation__link" href="">Novo Servico</a>
     <div class="android-drawer-separator"></div>
@@ -41,9 +44,23 @@
     <span class="mdl-navigation__link" href="">Clientes</span>
     <a class="mdl-navigation__link" href="">Novo Cliente</a>
     <a class="mdl-navigation__link" href="">Lista de Clientes</a>
+    <div class="android-drawer-separator"></div>
+    <span class="mdl-navigation__link" href="">Manicure e Pedicure</span>
+    <a class="mdl-navigation__link" href="">Agenda do Dia</a>
+    <a class="mdl-navigation__link" href="">Novo Agendamento</a>
+    <div class="android-drawer-separator"></div>
+    <span class="mdl-navigation__link" href="">Depilação</span>
+    <a class="mdl-navigation__link" href="">Agenda do Dia</a>
+    <a class="mdl-navigation__link" href="">Novo Agendamento</a>
 </nav>
 </div>
 
-    <router-outlet></router-outlet>
+  <div class="mdl-cell mdl-cell--6-col"></div>
+  <router-outlet></router-outlet>
+
+
+
+
+    
 
 </div>
