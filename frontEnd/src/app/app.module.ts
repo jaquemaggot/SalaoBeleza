@@ -2,6 +2,8 @@ import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 import { Router, RouterModule, Routes } from '@angular/router';
 import { HttpClientModule } from '@angular/common/http';
+
+//import Material Angular
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import {MatButtonModule, MatCheckboxModule, MatInputModule } from '@angular/material';
@@ -14,19 +16,22 @@ import { MatFormFieldModule} from '@angular/material/form-field';
 import { AppComponent } from './app.component';
 import { TesteComponent } from './teste/teste.component';
 import { AgMaquiagemComponent } from './ag-maquiagem/ag-maquiagem.component';
+import { NovaMaquiagemComponent } from './nova-maquiagem/nova-maquiagem.component';
 
 //Rotas
 const appRoutes: Routes = [
   { path: '', redirectTo: "/home", pathMatch: "full" },
   { path: 'home', component: TesteComponent },
-  { path: 'agendamaquiagem', component: AgMaquiagemComponent }
+  { path: 'agendamaquiagem', component: AgMaquiagemComponent },
+  { path: 'novamaquiagem', component: NovaMaquiagemComponent }
 ];
 
 @NgModule({
   declarations: [
     AppComponent,
     TesteComponent,
-    AgMaquiagemComponent
+    AgMaquiagemComponent,
+    NovaMaquiagemComponent
   ],
   imports: [
     BrowserModule,
