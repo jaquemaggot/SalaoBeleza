@@ -1,12 +1,11 @@
 import { Component, OnInit } from '@angular/core';
 
-
 @Component({
-  selector: 'app-nova-maquiagem',
-  templateUrl: './nova-maquiagem.component.html',
-  styleUrls: ['./nova-maquiagem.component.css']
+  selector: 'app-novo-cliente',
+  templateUrl: './novo-cliente.component.html',
+  styleUrls: ['./novo-cliente.component.css']
 })
-export class NovaMaquiagemComponent implements OnInit {
+export class NovoClienteComponent implements OnInit {
 
   sexo = [
     {value: "Mas", viewValue:"Masculino"},
@@ -19,7 +18,7 @@ export class NovaMaquiagemComponent implements OnInit {
     {value: "esta", viewValue: "Uniao Estavel"},
     {value: "out", viewValue: "Outros"},
   ];
-
+  
   constructor() { }
 
   ngOnInit() {

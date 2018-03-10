@@ -1,0 +1,42 @@
+<div class="corpo">
+  <div class="example-container mat-elevation-z8">
+    <h4>Novo Agendamento</h4>
+    <mat-form-field>
+      <input matInput placeholder="Nome">
+    </mat-form-field>
+    <div class="row">
+      <mat-form-field id="cpf">
+        <input matInput #input maxlength="11" placeholder="Digite o CPF">
+      </mat-form-field>
+      <mat-form-field id="rg">
+        <input matInput #input maxlength="8" placeholder="Digite o RG">
+      </mat-form-field>
+    </div>
+    <div class="row">
+      <mat-form-field id="separar" id="sexo">
+        <mat-select placeholder="Sexo">
+          <mat-option *ngFor="let sexo of sexo" [value]="sexo.value">
+            {{ sexo.viewValue }}
+          </mat-option>
+        </mat-select>
+      </mat-form-field>
+
+      <mat-form-field id="esta">
+        <mat-select placeholder="Estado Civil">
+          <mat-option *ngFor="let est of est" [value]="est.value">
+            {{ est.viewValue }}
+          </mat-option>
+        </mat-select>
+      </mat-form-field>
+    </div>
+    <div class="row">
+      <mat-form-field>
+        <textarea matInput placeholder="Observacao (opcional)" matTextareaAutosize matAutosizeMinRows="2" matAutosizeMaxRows="9"></textarea>
+      </mat-form-field>
+    </div>
+    <div class="row">
+      <button id="salvar" mat-raised-button color="primary">Salvar</button>
+      <button id="exit" mat-raised-button color="warn">Cancelar</button>
+    </div>
+  </div>
+</div>

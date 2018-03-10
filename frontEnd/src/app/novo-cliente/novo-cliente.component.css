@@ -1,0 +1,44 @@
+#cpf{
+    width: 20%;
+    margin-left: 10%;
+}
+.mat-form-field {
+    font-size: 16px;
+    width: 55%;
+    margin-left: 10%;
+  }
+/* .corpo{
+    margin-left: 30%;
+    margin-right: 10%
+} */
+#rg{
+    width: 30%;
+    margin-left: 2%;
+}
+
+.example-container {
+    display: flex;
+    flex-direction: column;
+    min-width: 300px;
+    margin: 2%;
+    padding-left: 5%;
+    padding-bottom: 2%;
+  }
+#sexo{
+    width: 25%;
+    margin-left: 10%;    
+}
+#esta{
+    width: 25%;
+    margin-left: 2%;    
+}
+#salvar{
+    width: 20%;
+    margin-left: 20%;
+}
+#exit{
+    width: 20%;
+}
+#separar{
+    margin-top: 5%;
+}
