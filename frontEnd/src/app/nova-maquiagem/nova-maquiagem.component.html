@@ -1,0 +1,31 @@
+<div class="example-container mat-elevation-z8">
+    <h4>Novo Agendamento</h4>
+    <mat-form-field>
+        <mat-select placeholder="Cliente">
+            <mat-option value="">Option</mat-option>
+        </mat-select>
+    </mat-form-field>
+    <div class="row">
+        <mat-form-field id="Ser">
+            <mat-select placeholder="Servico">
+                <mat-option value="">Option</mat-option>
+            </mat-select>
+        </mat-form-field>
+        <mat-form-field id="Data">
+            <input matInput [matDatepicker]="picker" placeholder="Data Agendada">
+            <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
+            <mat-datepicker #picker></mat-datepicker>
+        </mat-form-field>
+    </div>
+    <div id="valor" class="row">
+        <h5>Total 0,00</h5>
+    </div>
+    <div id="botao" class="row">
+        <button mat-fab color="primary">
+            <i class="material-icons">check</i>
+        </button>
+        <button id="canc" mat-fab color="warn">
+            <i class="material-icons">clear</i>
+        </button>
+    </div>
+</div>

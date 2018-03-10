@@ -22,6 +22,7 @@ import { AgMaquiagemComponent } from './ag-maquiagem/ag-maquiagem.component';
 import { NovaMaquiagemComponent } from './nova-maquiagem/nova-maquiagem.component';
 import { NovoClienteComponent } from './novo-cliente/novo-cliente.component';
 import { ConsultaClienteComponent } from './consulta-cliente/consulta-cliente.component';
+import { NovoServicoComponent } from './novo-servico/novo-servico.component';
 
 
 //Rotas
@@ -31,7 +32,8 @@ const appRoutes: Routes = [
   { path: 'agendamaquiagem', component: AgMaquiagemComponent },
   { path: 'novamaquiagem', component: NovaMaquiagemComponent },
   { path: 'novocliente', component: NovoClienteComponent },
-  {path: 'consultacliente', component: ConsultaClienteComponent}
+  {path: 'consultacliente', component: ConsultaClienteComponent},
+  {path: 'novoservicom', component:NovoServicoComponent}
 ];
 
 @NgModule({
@@ -41,7 +43,8 @@ const appRoutes: Routes = [
     AgMaquiagemComponent,
     NovaMaquiagemComponent,
     NovoClienteComponent,
-    ConsultaClienteComponent
+    ConsultaClienteComponent,
+    NovoServicoComponent
   ],
   imports: [
     BrowserModule,
