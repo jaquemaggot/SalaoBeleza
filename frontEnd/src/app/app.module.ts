@@ -14,6 +14,7 @@ import { MatFormFieldModule } from '@angular/material/form-field';
 import { MatSelectModule } from '@angular/material/select';
 import { MatDatepickerModule } from '@angular/material/datepicker';
 import { defaultFormat } from 'moment';
+import { MatCardModule } from '@angular/material/card';
 
 // import component
 import { AppComponent } from './app.component';
@@ -23,51 +24,79 @@ import { NovaMaquiagemComponent } from './nova-maquiagem/nova-maquiagem.componen
 import { NovoClienteComponent } from './novo-cliente/novo-cliente.component';
 import { ConsultaClienteComponent } from './consulta-cliente/consulta-cliente.component';
 import { NovoServicoComponent } from './novo-servico/novo-servico.component';
+import { CorteDiaComponent } from './corte-dia/corte-dia.component';
+import { NovoAgCabeloComponent } from './novo-ag-cabelo/novo-ag-cabelo.component';
+import { NovoCorteComponent } from './novo-corte/novo-corte.component';
+import { AgMaoComponent } from './ag-mao/ag-mao.component';
+import { NovaAgManicureComponent } from './nova-ag-manicure/nova-ag-manicure.component';
+import { NovaManicureComponent } from './nova-manicure/nova-manicure.component';
+import { AgDepilacaoComponent } from './ag-depilacao/ag-depilacao.component';
+import { NovaAgDepilacaoComponent } from './nova-ag-depilacao/nova-ag-depilacao.component';
+import { NovaDepilacaoComponent } from './nova-depilacao/nova-depilacao.component';
 
 
 //Rotas
 const appRoutes: Routes = [
-  { path: '', redirectTo: "/home", pathMatch: "full" },
-  { path: 'home', component: TesteComponent },
-  { path: 'agendamaquiagem', component: AgMaquiagemComponent },
-  { path: 'novamaquiagem', component: NovaMaquiagemComponent },
-  { path: 'novocliente', component: NovoClienteComponent },
-  {path: 'consultacliente', component: ConsultaClienteComponent},
-  {path: 'novoservicom', component:NovoServicoComponent}
+{ path: '', redirectTo: "/home", pathMatch: "full" },
+{ path: 'home', component: TesteComponent },
+{ path: 'agendamaquiagem', component: AgMaquiagemComponent },
+{ path: 'novamaquiagem', component: NovaMaquiagemComponent },
+{ path: 'novocliente', component: NovoClienteComponent },
+{ path: 'consultacliente', component: ConsultaClienteComponent },
+{ path: 'novoservicom', component:NovoServicoComponent },
+{ path: 'cotedia', component: CorteDiaComponent },
+{ path: 'novoagcabelo', component: NovoAgCabeloComponent },
+{ path: 'novocorte', component: NovoCorteComponent },
+{ path: 'agendamaoepe', component: AgMaoComponent },
+{ path: 'novamanicure', component: NovaAgManicureComponent },
+{ path: 'novapedicure', component: NovaManicureComponent },
+{ path: 'agendadepilacao', component: AgDepilacaoComponent },
+{ path: 'novadepilacao', component: NovaAgDepilacaoComponent },
+{path: 'novotipodepilacao', component: NovaDepilacaoComponent}
 ];
 
 @NgModule({
   declarations: [
-    AppComponent,
-    TesteComponent,
-    AgMaquiagemComponent,
-    NovaMaquiagemComponent,
-    NovoClienteComponent,
-    ConsultaClienteComponent,
-    NovoServicoComponent
+  AppComponent,
+  TesteComponent,
+  AgMaquiagemComponent,
+  NovaMaquiagemComponent,
+  NovoClienteComponent,
+  ConsultaClienteComponent,
+  NovoServicoComponent,
+  CorteDiaComponent,
+  NovoAgCabeloComponent,
+  NovoCorteComponent,
+  AgMaoComponent,
+  NovaAgManicureComponent,
+  NovaManicureComponent,
+  AgDepilacaoComponent,
+  NovaAgDepilacaoComponent,
+  NovaDepilacaoComponent
   ],
   imports: [
-    BrowserModule,
-    RouterModule.forRoot(
-      appRoutes
+  BrowserModule,
+  RouterModule.forRoot(
+    appRoutes
     ),
-    HttpClientModule,
-    FormsModule,
-    BrowserAnimationsModule,
-    MatButtonModule,
-    MatCheckboxModule,
-    MatMenuModule,
-    MatToolbarModule,
-    MatTableModule,
-    ReactiveFormsModule,
-    MatFormFieldModule,
-    MatInputModule,
-    MatSelectModule,
-    MatDatepickerModule,
-    MatNativeDateModule
+  HttpClientModule,
+  FormsModule,
+  BrowserAnimationsModule,
+  MatButtonModule,
+  MatCheckboxModule,
+  MatMenuModule,
+  MatToolbarModule,
+  MatTableModule,
+  ReactiveFormsModule,
+  MatFormFieldModule,
+  MatInputModule,
+  MatSelectModule,
+  MatDatepickerModule,
+  MatNativeDateModule,
+  MatCardModule
   ],
   providers: [
-    {provide: MAT_DATE_LOCALE, useValue: 'pt-BR'},
+  {provide: MAT_DATE_LOCALE, useValue: 'pt-BR'},
   ],
   bootstrap: [AppComponent],
   exports: [RouterModule]

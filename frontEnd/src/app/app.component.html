@@ -1,4 +1,5 @@
 <div class="mdl-layout mdl-js-layout mdl-layout--fixed-header">
+
     <header class="mdl-layout__header">
         <div class="mdl-layout__header-row">
             <!-- Title -->
@@ -22,38 +23,49 @@
 </header>
 <div class="android-drawer mdl-layout__drawer">
 
-<span class="mdl-layout-title">
-    <p></p>
-    <p></p>
-    <button  routerLink="/home" class="mdl-button mdl-js-button mdl-button--fab mdl-js-ripple-effect mdl-button--colored">
-        <i class="material-icons">home</i>
-    </button>
-    <!-- <img src="../../ext/img/user.png" > -->
-</span>
-<nav class="mdl-navigation">
-    <span class="mdl-navigation__link">Maquiagem</span>
-    <a class="mdl-navigation__link" routerLink="/agendamaquiagem">Agenda do Dia</a>
-    <a class="mdl-navigation__link" routerLink="/novamaquiagem">Novo Agendamento</a>
-    <a class="mdl-navigation__link" routerLink="/novoservicom">Cadastrar Servicos</a>
-    <div class="android-drawer-separator"></div>
-    <span class="mdl-navigation__link" href="">Cortes de Cabelo</span>
-    <a class="mdl-navigation__link" href="">Agenda do Dia</a>
-    <a class="mdl-navigation__link" href="">Novo Agendamento</a>
-    <a class="mdl-navigation__link" href="">Novo Servico</a>
-    <div class="android-drawer-separator"></div>
-    <span class="mdl-navigation__link" href="">Manicure e Pedicure</span>
-    <a class="mdl-navigation__link" href="">Agenda do Dia</a>
-    <a class="mdl-navigation__link" href="">Novo Agendamento</a>
-    <div class="android-drawer-separator"></div>
-    <span class="mdl-navigation__link" href="">Depilação</span>
-    <a class="mdl-navigation__link" href="">Agenda do Dia</a>
-    <a class="mdl-navigation__link" href="">Novo Agendamento</a>
-    <div class="android-drawer-separator"></div>
-    <span class="mdl-navigation__link" href="">Clientes</span>
-    <a class="mdl-navigation__link" routerLink="/novocliente">Novo Cliente</a>
-    <a class="mdl-navigation__link" routerLink="/consultacliente">Consultar Clientes</a>
-</nav>
+    <span class="mdl-layout-title">
+        <p></p>
+        <p></p>
+        <button  routerLink="/home" class="mdl-button mdl-js-button mdl-button--fab mdl-js-ripple-effect mdl-button--colored">
+            <i class="material-icons">home</i>
+        </button>
+        <!-- <img src="../../ext/img/user.png" > -->
+    </span>
+    <nav class="mdl-navigation">
+        <!-- MAQUIAGEM -->
+        <span class="mdl-navigation__link">Maquiagem</span>
+        <a class="mdl-navigation__link" routerLink="/agendamaquiagem">Maquiagens do Dia</a>
+        <a class="mdl-navigation__link" routerLink="/novamaquiagem">Novo Agendamento</a>
+        <a class="mdl-navigation__link" routerLink="/novoservicom">Nova Maquiagem</a>
+        <div class="android-drawer-separator"></div>
+        <!-- CABELE -->
+        <span class="mdl-navigation__link">Cortes de Cabelo</span>
+        <a class="mdl-navigation__link" routerLink="/cotedia">Cortes do Dia</a>
+        <a class="mdl-navigation__link" routerLink="/novoagcabelo">Novo Agendamento</a>
+        <a class="mdl-navigation__link" routerLink="/novocorte">Novo Corte</a>
+        <div class="android-drawer-separator"></div>
+        <!-- MAO E PES -->
+        <span class="mdl-navigation__link">Manicure e Pedicure</span>
+        <a class="mdl-navigation__link" routerLink="/agendamaoepe">Clientes do Dia</a>
+        <a class="mdl-navigation__link" routerLink="/novamanicure">Novo Agendamento</a>
+        <a class="mdl-navigation__link" routerLink="/novapedicure">Novo Serviço</a>
+        <div class="android-drawer-separator"></div>
+        <!-- DEPILACAO -->
+        <span class="mdl-navigation__link">Depilação</span>
+        <a class="mdl-navigation__link" routerLink="/agendadepilacao">Depilacoes do Dia</a>
+        <a class="mdl-navigation__link" routerLink="/novadepilacao">Novo Agendamento</a>
+        <a class="mdl-navigation__link" routerLink="/novotipodepilacao">Nova Depilação</a>
+        <div class="android-drawer-separator"></div>
+        <!-- CLIENTES -->
+        <span class="mdl-navigation__link">Clientes</span>
+        <a class="mdl-navigation__link" routerLink="/novocliente">Novo Cliente</a>
+        <a class="mdl-navigation__link" routerLink="/consultacliente">Consultar Clientes</a>
+    </nav>
+
 </div>
-  <div class="mdl-cell mdl-cell--6-col"></div>
-  <router-outlet></router-outlet>
+
+<div class="mdl-cell mdl-cell--6-col"></div>
+
+<router-outlet></router-outlet>
+
 </div>

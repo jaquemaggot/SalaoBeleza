@@ -8,10 +8,32 @@ import { Component, OnInit } from '@angular/core';
 })
 export class NovaMaquiagemComponent implements OnInit {
 
+	cliente = [
+		{value: '1', viewValue:'Leonardo Ozelin de Miranda'},
+		{value: '2', viewValue:'Antônio Correia Araujo'},
+		{value: '3', viewValue:'Gabrielly Cunha Gomes'},
+		{value: '4', viewValue:'Maria Goncalves Cunha'},
+		{value: '5', viewValue:' Yasmin Cunha Silva'},
+	];
+
+	servico = [
+		{value: '1', viewValue:'Olho Preto Esfumado', valor:10.00},
+		{value: '2', viewValue:'Maquiagem Colorida', valor:11.50},
+		{value: '3', viewValue:'Delineado Gatinho', valor:12.00},
+		{value: '4', viewValue:'Olho Tudo Boca Nada', valor:13.00},
+		{value: '5', viewValue:'Maquiagem Neutra', valor:14.00},
+		{value: '6', viewValue:'Olho Tudo Boca Tudo', valor:15.00},
+		{value: '7', viewValue:'Maquiagem Discreta', valor:16.00},
+		{value: '8', viewValue:'Maquiagem Bronzeadora', valor:17.00},
+	]
+
   constructor() { }
 
   ngOnInit() {
   }
+
+
+  ValorTotal: any;
 
 }
  

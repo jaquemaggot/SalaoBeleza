@@ -10,6 +10,7 @@ export class NovoServicoComponent implements OnInit {
   constructor() { }
 
   ngOnInit() {
+  	
   }
 
 }

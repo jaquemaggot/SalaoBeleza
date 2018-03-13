@@ -1,13 +1,12 @@
 import { Component, OnInit } from '@angular/core';
 import {MatTableDataSource} from '@angular/material'
- 
-@Component({
-  selector: 'app-ag-maquiagem',
-  templateUrl: './ag-maquiagem.component.html',
-  styleUrls: ['./ag-maquiagem.component.css']
-})
 
-export class AgMaquiagemComponent implements OnInit {
+@Component({
+  selector: 'app-ag-mao',
+  templateUrl: './ag-mao.component.html',
+  styleUrls: ['./ag-mao.component.css']
+})
+export class AgMaoComponent implements OnInit {
 
 ELEMENT_DATA: Element[] = [
   {position: 1, name: 'Gabrielly Cunha Gomes', weight: '13/03/2018'},

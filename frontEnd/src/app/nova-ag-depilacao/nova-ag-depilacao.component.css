@@ -1,0 +1,35 @@
+.mat-form-field {
+    font-size: 16px;
+    width: 55%;
+    margin-left: 10%;
+  }
+.example-container {
+    display: flex;
+    flex-direction: column;
+    min-width: 300px;
+    margin: 2%;
+    padding-left: 5%;
+    padding-bottom: 2%;
+  }
+  #Ser{
+    width: 30%;
+  }
+  #Data{
+    width: 22%;
+    margin-left: 3%;
+  }
+  #valor{
+    margin-left: 10%;
+  }
+  #Salvar{
+    width: 20%;
+    margin-left: 2%;
+    margin-top: 3%;
+  }
+
+#botao{
+  margin-left: 55%;
+}
+#canc{
+  margin-left: 2%;
+}
