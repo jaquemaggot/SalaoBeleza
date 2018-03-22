@@ -1,5 +1,5 @@
-import { Component, OnInit } from '@angular/core';
-import {MatTableDataSource} from '@angular/material'
+import { Component, OnInit, Inject } from '@angular/core';
+import {MatTableDataSource, MAT_DIALOG_DATA} from '@angular/material'
 
 @Component({
   selector: 'app-ag-depilacao',
@@ -14,7 +14,7 @@ LEMENT_DATA: Element[] = [
   {position: 3, name: 'Yasmin Cunha Silva', weight: '13/03/2018'}
 ];
 
-  constructor() { }
+  constructor(@Inject(MAT_DIALOG_DATA) public data: any) { }
 
   ngOnInit() {
   }

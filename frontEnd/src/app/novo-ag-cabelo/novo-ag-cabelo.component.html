@@ -16,6 +16,9 @@
             <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
             <mat-datepicker #picker></mat-datepicker>
         </mat-form-field>
+        <mat-form-field id="hora" >
+            <input id="hr" (keyup)="aperta($event);" maxlength="5" matInput placeholder="Horario">
+        </mat-form-field>
     </div>
     <div id="valor" class="row">
         <h5>Total {{ValorTotal}}</h5>

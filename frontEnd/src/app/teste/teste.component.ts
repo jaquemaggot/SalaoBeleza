@@ -1,19 +1,34 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Inject } from '@angular/core';
+import {MatDialog, MAT_DIALOG_DATA} from '@angular/material';
+import { MensagemComponent } from './../mensagem/mensagem.component'
 
 @Component({
-  selector: 'app-teste',
-  templateUrl: './teste.component.html',
-  styleUrls: ['./teste.component.css']
+	selector: 'app-teste',
+	templateUrl: './teste.component.html',
+	styleUrls: ['./teste.component.css']
 })
 export class TesteComponent implements OnInit {
 
-  constructor() { }
+	constructor(public dialog: MatDialog) { }
 
-  ngOnInit() {
-  }
+	ngOnInit() {
+		this.openDialog();
+	}
+
+	openDialog() {
+		this.dialog.open(MensagemComponent, {
+			data: {
+				animal: 'Hora ivalida'
+			}
+		});
+	}
 
 }
+
 export class Mask {
+
+	constructor(private alerta: TesteComponent){}
+
 	hora(campo, event) {
 		campo = document.getElementById(campo);
 		var novoValor = this.formataCampo(campo, "00:00", event);
@@ -23,7 +38,7 @@ export class Mask {
 				campo.value = (filtro[0] + ":" + filtro[1]);
 			} else {
 				campo.value = "";
-				alert("Expressao invalida");
+				this.alerta.openDialog();
 			}
 		}
 	}
@@ -60,3 +75,8 @@ export class Mask {
 		}
 	}
 }
+
+
+// export class DialogDataExampleDialog {
+// 	constructor(@Inject(MAT_DIALOG_DATA) public data: any) {}
+// }

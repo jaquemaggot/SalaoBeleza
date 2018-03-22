@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { Mask } from './../teste/teste.component';
 
 @Component({
 	selector: 'app-novo-ag-cabelo',
@@ -6,6 +7,8 @@ import { Component, OnInit } from '@angular/core';
 	styleUrls: ['./novo-ag-cabelo.component.css']
 })
 export class NovoAgCabeloComponent implements OnInit {
+
+	ValorTotal: any;	
 
 	cliente = [
 		{value: '1', viewValue:'Leonardo Ozelin de Miranda'},
@@ -26,13 +29,15 @@ export class NovoAgCabeloComponent implements OnInit {
 		{value: '8', viewValue:'Cabelo e Barba', valor:17.00},
 	]
 
-    ValorTotal: any;			
 
-	constructor() { }
+
+	constructor(private mask: Mask) { }
 
 	ngOnInit() {
 	}
 
-
-
+	aperta(event) {
+		this.mask.hora('hr', event);
+	}
 }
+ 

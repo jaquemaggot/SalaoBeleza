@@ -1,11 +1,14 @@
 import { Component, OnInit } from '@angular/core';
+import { Mask } from './../teste/teste.component';
 
 @Component({
-  selector: 'app-nova-ag-depilacao',
-  templateUrl: './nova-ag-depilacao.component.html',
-  styleUrls: ['./nova-ag-depilacao.component.css']
+	selector: 'app-nova-ag-depilacao',
+	templateUrl: './nova-ag-depilacao.component.html',
+	styleUrls: ['./nova-ag-depilacao.component.css']
 })
 export class NovaAgDepilacaoComponent implements OnInit {
+
+	ValorTotal: any;
 
 	cliente = [
 		{value: '1', viewValue:'Leonardo Ozelin de Miranda'},
@@ -26,11 +29,15 @@ export class NovaAgDepilacaoComponent implements OnInit {
 
 	]
 
-  constructor() { }
 
-  ngOnInit() {
-  }
+	constructor(private mask: Mask) { }
 
+	ngOnInit() {
+	}
 
-  ValorTotal: any;
+	aperta(event) {
+		this.mask.hora('hr', event);
+	}
+
 }
+ 

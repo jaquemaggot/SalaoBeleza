@@ -15,6 +15,7 @@ import { MatSelectModule } from '@angular/material/select';
 import { MatDatepickerModule } from '@angular/material/datepicker';
 import { defaultFormat } from 'moment';
 import { MatCardModule } from '@angular/material/card';
+import { MatDialogModule } from '@angular/material/dialog';
 
 // import component
 import { AppComponent } from './app.component';
@@ -33,6 +34,7 @@ import { NovaManicureComponent } from './nova-manicure/nova-manicure.component';
 import { AgDepilacaoComponent } from './ag-depilacao/ag-depilacao.component';
 import { NovaAgDepilacaoComponent } from './nova-ag-depilacao/nova-ag-depilacao.component';
 import { NovaDepilacaoComponent } from './nova-depilacao/nova-depilacao.component';
+import { MensagemComponent } from './mensagem/mensagem.component';
 
 
 //Rotas
@@ -72,7 +74,8 @@ const appRoutes: Routes = [
   NovaManicureComponent,
   AgDepilacaoComponent,
   NovaAgDepilacaoComponent,
-  NovaDepilacaoComponent
+  NovaDepilacaoComponent,
+  MensagemComponent
   ],
   imports: [
   BrowserModule,
@@ -93,7 +96,8 @@ const appRoutes: Routes = [
   MatSelectModule,
   MatDatepickerModule,
   MatNativeDateModule,
-  MatCardModule
+  MatCardModule,
+  MatDialogModule
   ],
   providers: [
   {provide: MAT_DATE_LOCALE, useValue: 'pt-BR'},
