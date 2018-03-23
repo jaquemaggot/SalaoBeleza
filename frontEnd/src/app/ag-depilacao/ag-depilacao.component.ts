@@ -14,7 +14,7 @@ LEMENT_DATA: Element[] = [
   {position: 3, name: 'Yasmin Cunha Silva', weight: '13/03/2018'}
 ];
 
-  constructor(@Inject(MAT_DIALOG_DATA) public data: any) { }
+  constructor() { }
 
   ngOnInit() {
   }
@@ -43,3 +43,6 @@ var ELEMENT_DATA: Element[] = [
   {position: 2, name: 'Maria Goncalves Cunha', weight: '13/03/2018'},
   {position: 3, name: 'Yasmin Cunha Silva', weight: '13/03/2018'}
 ];
+
+
+

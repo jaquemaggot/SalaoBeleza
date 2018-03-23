@@ -27,13 +27,14 @@ export class NovaAgManicureComponent implements OnInit {
 	]
 
 
-	constructor(private mask: Mask) { }
+	constructor() { }
 
 	ngOnInit() {
 	}
 
 	aperta(event) {
-		this.mask.hora('hr', event);
+		var macara = new Mask();
+		macara.hora('hr', event);
 	}
 }
  

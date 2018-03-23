@@ -29,15 +29,14 @@ export class NovaMaquiagemComponent implements OnInit {
 		{ value: '8', viewValue: 'Maquiagem Bronzeadora', valor: 17.00 },
 	];
 
-	constructor(private mask: Mask) { }
+	constructor() { }
 
 	ngOnInit() {
 	}
 
 	aperta(event) {
-		//var mask = Mask();
-
-		this.mask.hora('hr', event);
+		var mask = new Mask();
+		mask.hora('hr', event);
 	}
 
 }

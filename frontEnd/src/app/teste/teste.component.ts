@@ -1,6 +1,6 @@
 import { Component, OnInit, Inject } from '@angular/core';
-import {MatDialog, MAT_DIALOG_DATA} from '@angular/material';
-import { MensagemComponent } from './../mensagem/mensagem.component'
+import {MatDialog, MAT_DIALOG_DATA, MatTableDataSource} from '@angular/material';
+import { AgDepilacaoComponent } from './../ag-depilacao/ag-depilacao.component';
 
 @Component({
 	selector: 'app-teste',
@@ -9,25 +9,31 @@ import { MensagemComponent } from './../mensagem/mensagem.component'
 })
 export class TesteComponent implements OnInit {
 
-	constructor(public dialog: MatDialog) { }
+	constructor() { }
 
 	ngOnInit() {
-		this.openDialog();
+		
 	}
-
-	openDialog() {
-		this.dialog.open(MensagemComponent, {
-			data: {
-				animal: 'Hora ivalida'
-			}
-		});
-	}
-
+	displayedColumns = ['position', 'name', 'weight'];
+	dataSource = new MatTableDataSource(ELEMENT_DATA);
 }
 
-export class Mask {
+export interface Element {
+	name: string;
+	position: number;
+	weight: any;
+}
 
-	constructor(private alerta: TesteComponent){}
+var ELEMENT_DATA: Element[] = [
+{position: 1, name: 'Gabrielly Cunha Gomes', weight: '13/03/2018'},
+{position: 2, name: 'Maria Goncalves Cunha', weight: '13/03/2018'},
+{position: 3, name: 'Yasmin Cunha Silva', weight: '13/03/2018'}
+];
+
+
+//-------------------------------------------------------------------------------------------
+
+export class Mask {
 
 	hora(campo, event) {
 		campo = document.getElementById(campo);
@@ -38,7 +44,7 @@ export class Mask {
 				campo.value = (filtro[0] + ":" + filtro[1]);
 			} else {
 				campo.value = "";
-				this.alerta.openDialog();
+				alert("hora Invalida")
 			}
 		}
 	}
@@ -75,8 +81,3 @@ export class Mask {
 		}
 	}
 }
-
-
-// export class DialogDataExampleDialog {
-// 	constructor(@Inject(MAT_DIALOG_DATA) public data: any) {}
-// }

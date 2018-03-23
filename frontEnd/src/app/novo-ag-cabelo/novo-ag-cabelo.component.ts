@@ -31,13 +31,14 @@ export class NovoAgCabeloComponent implements OnInit {
 
 
 
-	constructor(private mask: Mask) { }
+	constructor() { }
 
 	ngOnInit() {
 	}
 
 	aperta(event) {
-		this.mask.hora('hr', event);
+		var mascara = new Mask();
+		mascara.hora('hr', event);
 	}
 }
  
