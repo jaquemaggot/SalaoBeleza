@@ -12,6 +12,7 @@
     "body-parser": "^1.18.2",
     "express": "^4.16.2",
     "express-load": "^1.1.16",
-    "express-session": "^1.15.6"
+    "express-session": "^1.15.6",
+    "oracledb": "^2.1.2"
   }
 }
