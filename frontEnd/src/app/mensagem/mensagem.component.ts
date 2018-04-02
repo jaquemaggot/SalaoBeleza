@@ -8,7 +8,7 @@ import {MatDialog, MAT_DIALOG_DATA} from '@angular/material';
 })
 export class MensagemComponent implements OnInit {
 
-	constructor(@Inject(MAT_DIALOG_DATA) public data: any) {}
+	constructor() {}
 
   ngOnInit() {
   }

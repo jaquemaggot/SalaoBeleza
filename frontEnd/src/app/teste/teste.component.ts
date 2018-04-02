@@ -1,6 +1,8 @@
 import { Component, OnInit, Inject } from '@angular/core';
 import {MatDialog, MAT_DIALOG_DATA, MatTableDataSource} from '@angular/material';
 import { AgDepilacaoComponent } from './../ag-depilacao/ag-depilacao.component';
+import { AgMaquiagemComponent } from './../ag-maquiagem/ag-maquiagem.component';
+import { MaquiagemService, Dados } from './../services/maquiagem.service';
 
 @Component({
 	selector: 'app-teste',
@@ -9,13 +11,27 @@ import { AgDepilacaoComponent } from './../ag-depilacao/ag-depilacao.component';
 })
 export class TesteComponent implements OnInit {
 
-	constructor() { }
+	servico: any;
+	maq
+
+	constructor(private maquiagem: MaquiagemService) { }
 
 	ngOnInit() {
-		
+		this.listar();
 	}
+
+
 	displayedColumns = ['position', 'name', 'weight'];
 	dataSource = new MatTableDataSource(ELEMENT_DATA);
+
+	  listar(){
+    this.maquiagem.listaTodos().subscribe(data=>{
+      this.servico = data;
+      this.displayedColumns = ['position', 'name', 'weight'];
+      this.maq = new MatTableDataSource(this.servico);
+    })
+  }
+
 }
 
 export interface Element {

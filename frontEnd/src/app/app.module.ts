@@ -3,6 +3,7 @@ import { NgModule } from '@angular/core';
 import { Router, RouterModule, Routes } from '@angular/router';
 import { HttpClientModule } from '@angular/common/http';
 
+
 //import Material Angular
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
@@ -20,41 +21,56 @@ import { MatDialogModule } from '@angular/material/dialog';
 // import component
 import { AppComponent } from './app.component';
 import { TesteComponent } from './teste/teste.component';
-import { AgMaquiagemComponent } from './ag-maquiagem/ag-maquiagem.component';
-import { NovaMaquiagemComponent } from './nova-maquiagem/nova-maquiagem.component';
-import { NovoClienteComponent } from './novo-cliente/novo-cliente.component';
-import { ConsultaClienteComponent } from './consulta-cliente/consulta-cliente.component';
-import { NovoServicoComponent } from './novo-servico/novo-servico.component';
-import { CorteDiaComponent } from './corte-dia/corte-dia.component';
-import { NovoAgCabeloComponent } from './novo-ag-cabelo/novo-ag-cabelo.component';
-import { NovoCorteComponent } from './novo-corte/novo-corte.component';
-import { AgMaoComponent } from './ag-mao/ag-mao.component';
-import { NovaAgManicureComponent } from './nova-ag-manicure/nova-ag-manicure.component';
-import { NovaManicureComponent } from './nova-manicure/nova-manicure.component';
-import { AgDepilacaoComponent } from './ag-depilacao/ag-depilacao.component';
-import { NovaAgDepilacaoComponent } from './nova-ag-depilacao/nova-ag-depilacao.component';
-import { NovaDepilacaoComponent } from './nova-depilacao/nova-depilacao.component';
 import { MensagemComponent } from './mensagem/mensagem.component';
 
+// Listagem
+import { AgMaquiagemComponent } from './ag-maquiagem/ag-maquiagem.component';
+import { AgDepilacaoComponent } from './ag-depilacao/ag-depilacao.component';
+import { ConsultaClienteComponent } from './consulta-cliente/consulta-cliente.component';
+import { CorteDiaComponent } from './corte-dia/corte-dia.component';
+import { AgMaoComponent } from './ag-mao/ag-mao.component';
+
+// Agendamento
+import { NovoAgCabeloComponent } from './novo-ag-cabelo/novo-ag-cabelo.component';
+import { NovaAgManicureComponent } from './nova-ag-manicure/nova-ag-manicure.component';
+import { NovaAgDepilacaoComponent } from './nova-ag-depilacao/nova-ag-depilacao.component';
+import { NovaMaquiagemComponent } from './nova-maquiagem/nova-maquiagem.component';
+
+// Cadastro Servicos
+import { NovoServicoComponent } from './novo-servico/novo-servico.component';
+import { NovoClienteComponent } from './novo-cliente/novo-cliente.component';
+import { NovaManicureComponent } from './nova-manicure/nova-manicure.component';
+import { NovoCorteComponent } from './novo-corte/novo-corte.component';
+import { NovaDepilacaoComponent } from './nova-depilacao/nova-depilacao.component';
+
+// Servicos
+import { MaquiagemService } from './services/maquiagem.service';
+import { CortesService } from './services/cortes.service';
+import { DepilacaoService } from './services/depilacao.service';
+import { ManicureService } from './services/manicure.service';
 
 //Rotas
 const appRoutes: Routes = [
-{ path: '', redirectTo: "/home", pathMatch: "full" },
-{ path: 'home', component: TesteComponent },
-{ path: 'agendamaquiagem', component: AgMaquiagemComponent },
-{ path: 'novamaquiagem', component: NovaMaquiagemComponent },
-{ path: 'novocliente', component: NovoClienteComponent },
-{ path: 'consultacliente', component: ConsultaClienteComponent },
-{ path: 'novoservicom', component:NovoServicoComponent },
-{ path: 'cotedia', component: CorteDiaComponent },
-{ path: 'novoagcabelo', component: NovoAgCabeloComponent },
-{ path: 'novocorte', component: NovoCorteComponent },
-{ path: 'agendamaoepe', component: AgMaoComponent },
-{ path: 'novamanicure', component: NovaAgManicureComponent },
-{ path: 'novapedicure', component: NovaManicureComponent },
-{ path: 'agendadepilacao', component: AgDepilacaoComponent },
-{ path: 'novadepilacao', component: NovaAgDepilacaoComponent },
-{path: 'novotipodepilacao', component: NovaDepilacaoComponent}
+  { path: '', redirectTo: "/home", pathMatch: "full" },
+  { path: 'home', component: TesteComponent },
+  { path: 'teste/:id', component: MensagemComponent },
+  // Listagem
+  { path: 'agendamaquiagem', component: AgMaquiagemComponent },
+  { path: 'agendadepilacao', component: AgDepilacaoComponent },
+  { path: 'consultacliente', component: ConsultaClienteComponent },
+  { path: 'cotedia', component: CorteDiaComponent },
+  { path: 'agendamaoepe', component: AgMaoComponent },
+  // Agendamento
+  { path: 'novoagcabelo', component: NovoAgCabeloComponent },
+  { path: 'novamanicure', component: NovaAgManicureComponent },
+  { path: 'novadepilacao', component: NovaAgDepilacaoComponent },
+  { path: 'novamaquiagem', component: NovaMaquiagemComponent },
+  // Cadastro de Servicos
+  { path: 'novocliente', component: NovoClienteComponent },
+  { path: 'novoservicom', component:NovoServicoComponent },
+  { path: 'novocorte', component: NovoCorteComponent },
+  { path: 'novapedicure', component: NovaManicureComponent },
+  {path: 'novotipodepilacao', component: NovaDepilacaoComponent}
 ];
 
 @NgModule({
@@ -101,6 +117,10 @@ const appRoutes: Routes = [
   ],
   providers: [
   {provide: MAT_DATE_LOCALE, useValue: 'pt-BR'},
+  MaquiagemService,
+  CortesService, 
+  DepilacaoService, 
+  ManicureService
   ],
   bootstrap: [AppComponent],
   exports: [RouterModule]
@@ -108,3 +128,4 @@ const appRoutes: Routes = [
 export class AppModule { }
 
 export class PizzaPartyAppModule { }
+
