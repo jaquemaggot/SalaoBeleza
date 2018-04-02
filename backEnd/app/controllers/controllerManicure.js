@@ -1,6 +1,6 @@
 module.exports = function (app) {
 
-	const models = require('./../models/agenda.js')
+	const models = require('./../models/manicure.js')
 
 	return{
 		list
@@ -17,7 +17,6 @@ module.exports = function (app) {
 				});
 			}
 			else{
-				console.log(rows);
 				return res.send(rows);
 			}
 		});
