@@ -4,7 +4,7 @@ oracledb.getConnection(
     {
         user: "LEO",
         password: "leo21edu31",
-        connectionString: "192.168.10.4:1521/XE"
+        connectionString: "192.168.56.1:1521/XE"
     },
     function(err, connection){
         if(err){
@@ -13,6 +13,10 @@ oracledb.getConnection(
         }
         connection.execute(
             'SELECT * FROM LEONARDO.DEPARTAMENTOS',
+            [],
+            {
+                outFormat: oracledb.OBJECT,
+            },
             function(err, result){
                 if(err){
                     console.error(err.message);
@@ -20,9 +24,9 @@ oracledb.getConnection(
                     return;
                 }
                 //console.log(result.metaData);
-                var js = JSON.parse(result.row);
+                //var js = JSON.parse(result.row);
                 //console.log(js);
-                console.log('Query results: ', js);
+                console.log(result.rows);
                 doRelease(connection);
             }
         )

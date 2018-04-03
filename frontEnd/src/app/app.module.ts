@@ -48,12 +48,14 @@ import { MaquiagemService } from './services/maquiagem.service';
 import { CortesService } from './services/cortes.service';
 import { DepilacaoService } from './services/depilacao.service';
 import { ManicureService } from './services/manicure.service';
+import { LoginComponent } from './login/login.component';
 
 //Rotas
 const appRoutes: Routes = [
   { path: '', redirectTo: "/home", pathMatch: "full" },
   { path: 'home', component: TesteComponent },
   { path: 'teste/:id', component: MensagemComponent },
+  { path: 'login', component: LoginComponent },
   // Listagem
   { path: 'agendamaquiagem', component: AgMaquiagemComponent },
   { path: 'agendadepilacao', component: AgDepilacaoComponent },
@@ -67,60 +69,61 @@ const appRoutes: Routes = [
   { path: 'novamaquiagem', component: NovaMaquiagemComponent },
   // Cadastro de Servicos
   { path: 'novocliente', component: NovoClienteComponent },
-  { path: 'novoservicom', component:NovoServicoComponent },
+  { path: 'novoservicom', component: NovoServicoComponent },
   { path: 'novocorte', component: NovoCorteComponent },
   { path: 'novapedicure', component: NovaManicureComponent },
-  {path: 'novotipodepilacao', component: NovaDepilacaoComponent}
+  { path: 'novotipodepilacao', component: NovaDepilacaoComponent }
 ];
 
 @NgModule({
   declarations: [
-  AppComponent,
-  TesteComponent,
-  AgMaquiagemComponent,
-  NovaMaquiagemComponent,
-  NovoClienteComponent,
-  ConsultaClienteComponent,
-  NovoServicoComponent,
-  CorteDiaComponent,
-  NovoAgCabeloComponent,
-  NovoCorteComponent,
-  AgMaoComponent,
-  NovaAgManicureComponent,
-  NovaManicureComponent,
-  AgDepilacaoComponent,
-  NovaAgDepilacaoComponent,
-  NovaDepilacaoComponent,
-  MensagemComponent
+    AppComponent,
+    TesteComponent,
+    AgMaquiagemComponent,
+    NovaMaquiagemComponent,
+    NovoClienteComponent,
+    ConsultaClienteComponent,
+    NovoServicoComponent,
+    CorteDiaComponent,
+    NovoAgCabeloComponent,
+    NovoCorteComponent,
+    AgMaoComponent,
+    NovaAgManicureComponent,
+    NovaManicureComponent,
+    AgDepilacaoComponent,
+    NovaAgDepilacaoComponent,
+    NovaDepilacaoComponent,
+    MensagemComponent,
+    LoginComponent
   ],
   imports: [
-  BrowserModule,
-  RouterModule.forRoot(
-    appRoutes
+    BrowserModule,
+    RouterModule.forRoot(
+      appRoutes
     ),
-  HttpClientModule,
-  FormsModule,
-  BrowserAnimationsModule,
-  MatButtonModule,
-  MatCheckboxModule,
-  MatMenuModule,
-  MatToolbarModule,
-  MatTableModule,
-  ReactiveFormsModule,
-  MatFormFieldModule,
-  MatInputModule,
-  MatSelectModule,
-  MatDatepickerModule,
-  MatNativeDateModule,
-  MatCardModule,
-  MatDialogModule
+    HttpClientModule,
+    FormsModule,
+    BrowserAnimationsModule,
+    MatButtonModule,
+    MatCheckboxModule,
+    MatMenuModule,
+    MatToolbarModule,
+    MatTableModule,
+    ReactiveFormsModule,
+    MatFormFieldModule,
+    MatInputModule,
+    MatSelectModule,
+    MatDatepickerModule,
+    MatNativeDateModule,
+    MatCardModule,
+    MatDialogModule
   ],
   providers: [
-  {provide: MAT_DATE_LOCALE, useValue: 'pt-BR'},
-  MaquiagemService,
-  CortesService, 
-  DepilacaoService, 
-  ManicureService
+    { provide: MAT_DATE_LOCALE, useValue: 'pt-BR' },
+    MaquiagemService,
+    CortesService,
+    DepilacaoService,
+    ManicureService
   ],
   bootstrap: [AppComponent],
   exports: [RouterModule]
