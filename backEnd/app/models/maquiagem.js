@@ -2,7 +2,7 @@ var oracledb = require('oracledb');
 
 module.exports = {
 	list,
-	doInsert
+	insert,
 }
 
 /*function list(x, callback) {
@@ -23,7 +23,7 @@ function list(q, connectionString, callback){
 		{
 			user: "LEO",
 			password: "leo21edu31",
-			connectionString: "192.168.56.1:1521/XE"
+			connectionString: "192.168.1.174:1521/XE"
 		},
 		function(err, connection){
 			if(err){
@@ -31,32 +31,25 @@ function list(q, connectionString, callback){
 				return;
 			}
 			connection.execute(
-				'SELECT * FROM leo.agmaquiagem',
+				'SELECT * FROM leo.ag_maquiagem',
 				[],
 				{
 					outFormat: oracledb.OBJECT,
 				},
 				function(err, result){
-					// if(err){
-					// 	console.error(err.message);
-					// 	doRelease(connection);
-					// }
-					//console.log(result.metaData);
-					//var js = JSON.parse(result.row);
-					//console.log(js);
-					return callback(err, result);
+					return callback(err, result.rows);
 				}
 			)
 		}
 	);
 }
 // Insert
-function doInsert(valor, connectionString, callback){
+function insert(valor, connectionString, callback){
 	oracledb.getConnection(
 		{
 			user: "LEO",
 			password: "leo21edu31",
-			connectionString: "192.168.56.1:1521/XE"	
+			connectionString: "192.168.1.174:1521/XE"	
 		},
 		function(err, connection){
 			if(err){
@@ -64,19 +57,17 @@ function doInsert(valor, connectionString, callback){
 				return;
 			}
 			connection.execute(
-				'Insert into leo.agmaquiagem a (a.codcli, a.codServ, a.dataAgen, a.horaAgen) values (:codCli, :codServ, :dataAg, :horaAg)',
+				'Insert into leo.ag_maquiagem (codcli, codServ, dataAgen, horaAgen) values (:codCli, :codServ, :dataAg, :horaAg)',
 				[valor.codCli, valor.codSrv, valor.dtAg, valor.hrAg],
+				{ autoCommit: true },
 				function(err, result){
-					if(err){
-						return callback(err, result);
-					} else {
 						return callback(err, result)
 					}
-				}
+				
 			);
 		}
 	);
-};
+}
 
 function doRelease(connection)
 {

@@ -38,9 +38,11 @@ valor: any;
 
   listar(){
     this.maquiagem.listaTodos().subscribe(data=>{
+      console.log(data);
       this.servico = data;
-      this.displayedColumns = ['position', 'name', 'weight', 'symbol'];
+      this.displayedColumns = ['CODAGENDA', 'CODCLI', 'DATAAGEN', 'HORAAGEN','symbol'];
       this.dataSource = new MatTableDataSource(this.servico);
+
     })
   }
   listarTabela(){
@@ -53,4 +55,3 @@ export interface Element {
   position: number;
   weight: any;
 }
-

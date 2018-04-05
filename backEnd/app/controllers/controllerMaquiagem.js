@@ -7,7 +7,7 @@ module.exports = function (app) {
 
 	return{
 		list,
-		doInsert
+		insert,
 	}
 
 	function list(req, res) {
@@ -33,7 +33,8 @@ module.exports = function (app) {
 			dtAg: req.body.data,
 			hrAg: req.body.hora
 		}
-		models.doInsert(valor, connectionString, (err, rows)=>{
+		console.log(valor);
+		models.insert(valor, connectionString, (err, rows)=>{
 			if(err){
 				return res.json({
 					message: "Erro na insercao",
@@ -42,7 +43,7 @@ module.exports = function (app) {
 				});
 			}
 			else{
-				return res.send("Inserido com sucesso! ", rows);
+				return res.send(rows);
 			}
 		});
 	};
